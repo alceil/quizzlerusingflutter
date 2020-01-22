@@ -8,3 +8,4 @@ class Question
     Questionanswer = a;
   }
 }
+Question new question('text',true)

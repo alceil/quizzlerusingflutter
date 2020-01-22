@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'question.dart'
+import 'quiz_brain.dart'
 void main() => runApp(Quizzler());
 
 class Quizzler extends StatelessWidget {
@@ -38,13 +39,6 @@ class _QuizPageState extends State<QuizPage> {
 //        'A slug\'s blood is green.'
 //  ]
 //  Question q1=Question(q:'You can lead a cow down stairs but not up stairs.',a:false)
-  list <questions> questionbank
-  [
-  Question q1=Question(q:'You can lead a cow down stairs but not up stairs.',a:false),
-      Question q1=Question(q:'Approximately one quarter of human bones are in the feet.',a:true),
-  Question q1=Question(q:'A slug\'s blood is green.',a:true),
-
-  ]
 
   int questions=0;
   @override
@@ -59,7 +53,7 @@ class _QuizPageState extends State<QuizPage> {
             padding: EdgeInsets.all(10.0),
             child: Center(
               child: Text(
-                questionbank[questionno].questiontext;
+                quiz_brain.questionbank[questionno].questiontext;
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   fontSize: 25.0,
@@ -83,7 +77,7 @@ class _QuizPageState extends State<QuizPage> {
                 ),
               ),
               onPressed: () {
-                bool correctanswer = answers[questionno];
+                bool correctanswer = quiz_brain.answers[questionno];
                 if(correctanswer==True)
                   {
                     print('User got it right');
@@ -112,7 +106,7 @@ class _QuizPageState extends State<QuizPage> {
                 ),
               ),
               onPressed: () {
-    bool correctanswer = questionbank[questionno].questionanswer;
+    bool correctanswer = quiz_brain.questionbank[questionno].questionanswer;
     if(correctanswer==False)
     {
     print('User got it right');
