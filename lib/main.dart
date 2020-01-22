@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'question.dart'
 import 'quiz_brain.dart'
 void main() => runApp(Quizzler());
-
+Quizbrain quizbrain=quizbrain();
 class Quizzler extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
