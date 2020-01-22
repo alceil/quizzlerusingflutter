@@ -53,7 +53,7 @@ class _QuizPageState extends State<QuizPage> {
             padding: EdgeInsets.all(10.0),
             child: Center(
               child: Text(
-                quiz_brain.questionbank[questionno].questiontext;
+                quiz_brain.getquestion(questionno);
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   fontSize: 25.0,
@@ -85,8 +85,7 @@ class _QuizPageState extends State<QuizPage> {
                     print('User got it wrong');
                   }
                 setstate(){
-                  questionno++;
-                  )
+                  quiz_brain.nextQuestion();
                 }
                 //The user picked true.
               },
@@ -106,7 +105,7 @@ class _QuizPageState extends State<QuizPage> {
                 ),
               ),
               onPressed: () {
-    bool correctanswer = quiz_brain.questionbank[questionno].questionanswer;
+    bool correctanswer = quiz_brain.getanswer(questionno);
     if(correctanswer==False)
     {
     print('User got it right');
